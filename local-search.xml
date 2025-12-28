@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Numpy知识</title>
+    <link href="/tyhzz/2025/12/28/numpy/"/>
+    <url>/tyhzz/2025/12/28/numpy/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一-核心特性"><a href="#一-核心特性" class="headerlink" title="一.核心特性"></a>一.核心特性</h3><p>所有元素类型必须一致；基于连续内存存储，支持向量化运算；</p><h3 id="二-多维性"><a href="#二-多维性" class="headerlink" title="二.多维性"></a>二.多维性</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">arr = np.array(<span class="hljs-number">5</span>) <span class="hljs-comment">#创建一个0维数组</span><br>arr.ndim <span class="hljs-comment">#ndim 打印维度</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据分析</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>numpy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SQL知识</title>
     <link href="/tyhzz/2025/12/23/web%E5%AD%A6%E4%B9%A0/"/>
     <url>/tyhzz/2025/12/23/web%E5%AD%A6%E4%B9%A0/</url>
