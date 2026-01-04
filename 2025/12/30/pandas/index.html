@@ -19,13 +19,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="pandas是基于NumPy构建的专门为处理表格和混杂数据设计的Python库。 Series &#x2F; DataFrame 一.Series创建123s &#x3D; pd.Series([1,2,3,4,5,6])s &#x3D; pd.Series([1,2,3],index&#x3D;[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;])#自定义索引s &#x3D; pd.Series(&amp;#">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Pandas知识">
 <meta property="og:url" content="https://tyhzz.github.io/tyhzz/2025/12/30/pandas/index.html">
 <meta property="og:site_name" content="土豆">
+<meta property="og:description" content="pandas是基于NumPy构建的专门为处理表格和混杂数据设计的Python库。 Series &#x2F; DataFrame 一.Series创建123s &#x3D; pd.Series([1,2,3,4,5,6])s &#x3D; pd.Series([1,2,3],index&#x3D;[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;])#自定义索引s &#x3D; pd.Series(&amp;#">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-30T15:47:56.839Z">
-<meta property="article:modified_time" content="2025-12-30T15:50:17.282Z">
+<meta property="article:modified_time" content="2026-01-04T19:06:55.400Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="pandas">
 <meta name="twitter:card" content="summary_large_image">
@@ -233,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          2.7k 字
         
       </span>
     
@@ -244,7 +246,7 @@
         
         
         
-          1 分钟
+          23 分钟
         
       </span>
     
@@ -286,7 +288,48 @@
             
               <div class="markdown-body">
                 
-                
+                <p>pandas是基于NumPy构建的专门为处理表格和混杂数据设计的Python库。</p>
+<p>Series &#x2F; DataFrame</p>
+<h3 id="一-Series创建"><a href="#一-Series创建" class="headerlink" title="一.Series创建"></a>一.Series创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">s = pd.Series([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>])<br>s = pd.Series([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],index=[<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>])<span class="hljs-comment">#自定义索引</span><br>s = pd.Series(&#123;<span class="hljs-string">&quot;a&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&quot;b&quot;</span>:<span class="hljs-number">3</span>&#125;)<span class="hljs-comment">#通过字典定义</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="二-属性"><a href="#二-属性" class="headerlink" title="二.属性"></a>二.属性</h3><p>loc：自定义索引，明面自己设定的</p>
+<p>iloc：默认的，0，1，2，3那种</p>
+<p>at&#x2F;iat：访问单个元素（标签&#x2F;索引）</p>
+<p>ndim：维度、shape：形状、values：值</p>
+<p>size：元素个数、name：series名称</p>
+<p>常用方法：</p>
+<p>head():查看前n行数据，默认5行</p>
+<p>tail()：查看后n行数据，默认5行</p>
+<p>isin():判断是否在元素中</p>
+<p>isna():判断是否为缺失值</p>
+<p>sum():求和</p>
+<p>mean():均值</p>
+<p>var():方差</p>
+<p>std():标准差</p>
+<p><strong>diff()：计算series数组变化</strong></p>
+<h3 id="三-案例"><a href="#三-案例" class="headerlink" title="三.案例"></a>三.案例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#生成10个学生的成绩，统计均值，最大，最小，大于平均分的个数</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br>np.random.seed(<span class="hljs-number">42</span>)<br>scores = pd.Series(np.random.randint(<span class="hljs-number">50</span>,<span class="hljs-number">101</span>,<span class="hljs-number">10</span>),index=[<span class="hljs-string">&#x27;学生&#x27;</span>+<span class="hljs-built_in">str</span>(i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>)])<br><span class="hljs-built_in">print</span>(scores)<br><span class="hljs-built_in">print</span>(scores.mean(),scores.<span class="hljs-built_in">max</span>(),scores.<span class="hljs-built_in">min</span>())<br><span class="hljs-built_in">print</span>(scores[scores &gt; scores.mean()].count())<span class="hljs-comment">#布尔索引</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#给定一周每天最高温度，找出超过30度的天数，计算平均温度，将温度排序，找出最大变化的两天</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br>np.random.seed(<span class="hljs-number">50</span>)<br>s = np.random.randint(<span class="hljs-number">20</span>,<span class="hljs-number">38</span>,<span class="hljs-number">7</span>)<br>t = pd.Series(s,index=[<span class="hljs-string">&#x27;星期&#x27;</span>+ <span class="hljs-built_in">str</span>(i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">8</span>)])<br><span class="hljs-comment"># temperaytures = pd.Series([28,31,29,32,30,27,33],index=[&#x27;星期&#x27; + str(i) for i in range(1,8)])</span><br><span class="hljs-comment"># print(temperaytures,t)</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;超过30的天数：&quot;</span>,t[t&gt;<span class="hljs-number">30</span>].count())<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;平均温度：&quot;</span>,t.mean())<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;排序后：&quot;</span>,t.sort_values(ascending=<span class="hljs-literal">False</span>)) <span class="hljs-comment">#是否升序</span><br><span class="hljs-comment"># change = pd.Series(np.array([s[i+1]-s[i] for i in range(len(s)-1)]),index=[&#x27;星期&#x27;+str(j)+&#x27;到星期&#x27; +str(j+1) for j in range(1,7)]).abs().sort_values(ascending=False).index</span><br><span class="hljs-comment"># print(change[0])</span><br>c = t.diff().<span class="hljs-built_in">abs</span>().keys()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;变化最大的两天是：&quot;</span>,*(c[:<span class="hljs-number">2</span>].tolist()))<br></code></pre></td></tr></table></figure>
+
+<h3 id="四-DataFrame创建"><a href="#四-DataFrame创建" class="headerlink" title="四.DataFrame创建"></a>四.DataFrame创建</h3><p>可以理解为多个Series组合在一起</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#字典方式1</span><br>s1 = pd.Series([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>])<br>s2 = pd.Series([<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>])<br>df = pd.DataFrame(&#123;<span class="hljs-string">&#x27;第一列&#x27;</span>:s1,<span class="hljs-string">&#x27;第二列&#x27;</span>:s2&#125;)<br><span class="hljs-comment">#字典方式2</span><br>df = pd.DataFrame(&#123;<br>    <span class="hljs-string">&quot;id&quot;</span>:[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],<br>    <span class="hljs-string">&quot;name&quot;</span>:[<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;b&quot;</span>,<span class="hljs-string">&quot;c&quot;</span>,<span class="hljs-string">&quot;d&quot;</span>,<span class="hljs-string">&quot;e&quot;</span>],<br>    <span class="hljs-string">&quot;age&quot;</span>:[<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>,<span class="hljs-number">40</span>,<span class="hljs-number">50</span>]<br>&#125;,index=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],columns=[<span class="hljs-string">&#x27;id&#x27;</span>,<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-string">&#x27;age&#x27;</span>]) <span class="hljs-comment">#columns可以重定义列的顺序</span><br><br>df.sample()<span class="hljs-comment">#随机取，随机条数</span><br></code></pre></td></tr></table></figure>
+
+<p>属性与Series类似</p>
+<p>values_counts():每个值出现的次数（统计每行出现次数，可以实现去重）</p>
+<p>drop_duplicates()：去重</p>
+<p>duplicated(subset&#x3D;[‘name’]):检查有无重复，可以指定只看某列</p>
+<p>补充：sum(axis&#x3D;1)：横向求和，默认纵向</p>
+<p><strong>具体方法属性参考网络</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">df[<span class="hljs-string">&quot;补充&quot;</span>]=[<span class="hljs-string">&quot;第一&quot;</span>,<span class="hljs-string">&quot;第二&quot;</span>,<span class="hljs-string">&quot;第三&quot;</span>,<span class="hljs-string">&quot;第四&quot;</span>,<span class="hljs-string">&quot;第五&quot;</span>]<span class="hljs-comment">#增加列</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="五-数据分析"><a href="#五-数据分析" class="headerlink" title="五.数据分析"></a>五.数据分析</h3><p>流程：数据收集、数据清洗、数据分析、数据可视化</p>
+<h4 id="（1）数据收集"><a href="#（1）数据收集" class="headerlink" title="（1）数据收集"></a>（1）数据收集</h4><p>从文件中导入导出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br>df = pd.read_csv(<span class="hljs-string">&#x27;data/user_behavior.csv&#x27;</span>) <span class="hljs-comment">#导入数据</span><br>df.to_csv(<span class="hljs-string">&#x27;data/new_vegetables.csv&#x27;</span>, index=<span class="hljs-literal">False</span>)<span class="hljs-comment">#导出数据，导出时取消索引</span><br></code></pre></td></tr></table></figure>
+
+<p>json类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">df = pd.read_json(<span class="hljs-string">&#x27;data/data1.json&#x27;</span>)<span class="hljs-comment">#简单json</span><br><br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;data/data1.json&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    raw_data = json.load(f)  <span class="hljs-comment"># 先加载成Python字典</span><br><span class="hljs-built_in">print</span>(pd.DataFrame(raw_data[<span class="hljs-string">&#x27;user&#x27;</span>])) <span class="hljs-comment">#复杂json，加载出来后再转成dataframe类型</span><br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
