@@ -19,12 +19,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一.sql知识1.概念​	sql是结构化查询语句 ​	关键字不能作为表或列的名字 2.检索(select)12345select name from table1 --检索单列select name,age from table1 --检索多列--检索不同的值(distinct):去除重复检索值select distinct age from table1 --检索去重  限制结果 (1)sql">
+    <meta name="description" content="基于sql的数据库知识，检索查询修改连表等，其中连表是难点 一.sql知识1.概念​	sql是结构化查询语句 ​	关键字不能作为表或列的名字 2.检索(select)12345select name from table1 --检索单列select name,age from table1 --检索多列--检索不同的值(distinct):去除重复检索值select distinct age fr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL知识">
 <meta property="og:url" content="https://tyhzz.github.io/tyhzz/2025/12/23/web%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="土豆">
-<meta property="og:description" content="一.sql知识1.概念​	sql是结构化查询语句 ​	关键字不能作为表或列的名字 2.检索(select)12345select name from table1 --检索单列select name,age from table1 --检索多列--检索不同的值(distinct):去除重复检索值select distinct age from table1 --检索去重  限制结果 (1)sql">
+<meta property="og:description" content="基于sql的数据库知识，检索查询修改连表等，其中连表是难点 一.sql知识1.概念​	sql是结构化查询语句 ​	关键字不能作为表或列的名字 2.检索(select)12345select name from table1 --检索单列select name,age from table1 --检索多列--检索不同的值(distinct):去除重复检索值select distinct age fr">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="c:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1739452506770.png">
 <meta property="og:image" content="c:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1739725584545.png">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="c:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1739801090125.png">
 <meta property="og:image" content="c:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1739816053220.png">
 <meta property="article:published_time" content="2025-12-23T14:58:54.047Z">
-<meta property="article:modified_time" content="2025-12-23T16:14:46.901Z">
+<meta property="article:modified_time" content="2026-01-04T19:11:07.314Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary_large_image">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.2k 字
+          8.3k 字
         
       </span>
     
@@ -297,7 +297,8 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一-sql知识"><a href="#一-sql知识" class="headerlink" title="一.sql知识"></a>一.sql知识</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>​	sql是结构化查询语句</p>
+                <p>基于sql的数据库知识，检索查询修改连表等，其中连表是难点</p>
+<h2 id="一-sql知识"><a href="#一-sql知识" class="headerlink" title="一.sql知识"></a>一.sql知识</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>​	sql是结构化查询语句</p>
 <p>​	关键字不能作为表或列的名字</p>
 <h3 id="2-检索-select"><a href="#2-检索-select" class="headerlink" title="2.检索(select)"></a>2.检索(select)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> table1 <span class="hljs-comment">--检索单列</span><br><span class="hljs-keyword">select</span> name,age <span class="hljs-keyword">from</span> table1 <span class="hljs-comment">--检索多列</span><br><br><span class="hljs-comment">--检索不同的值(distinct):去除重复检索值</span><br><span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> age <span class="hljs-keyword">from</span> table1 <span class="hljs-comment">--检索去重</span><br></code></pre></td></tr></table></figure>
 
